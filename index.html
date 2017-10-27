@@ -1,15 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+  <title>Projeto do Poder</title>
+</head>
 
-<div class="row">
-<div class="col-lg-4 col-lg-offset-4">
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <strong>Titulo do Panel</strong>
+<body class="container">
+    <br><br><br>
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+
+          <h1 id="titulo" class="text-center">
+            Projeto do Poder
+          </h1>
+
+          <h4 id="usuario"></h4>
+
+          <div class="hidden" id="dialog-confirm" title="Cuidado!">
+              <p>
+                <div class="alert alert-danger">
+                    Ao excluir tudo se apagará!
+                </div>
+              </p>
+          </div>
+
+
+           <div class="panel panel-primary">
+               <div class="panel-heading">
+                   <span class="glyphicon glyphicon-dashboard"></span>
+                   <strong>Dashboard</strong>
+               </div>
+               <div class="panel-body">
+                   <a href="#" id="a-novo-contato" class="btn btn-default">
+                       <span class="glyphicon glyphicon-plus-sign"></span>
+                       Novo Contato
+                   </a>
+
+                   <a href="#" id="limpar-tudo" class="btn btn-danger">
+                       <span class="glyphicon glyphicon-remove"></span>
+                       Limpar Tudo
+                   </a>
+
+                   <br><br>
+
+                   <div id="form-novo-contato" class="hidden">
+                       <form id="x" action="#" class="well">
+                           <legend>NOVO CONTATO</legend>
+
+                           <div class="form-group" id="form-nome">
+                               <label for="nome">Nome</label>
+                               <input type="text" id="nome" class="form-control">
+                           </div>
+
+                           <div class="form-group" id="form-email">
+                               <label for="email">Email</label>
+                               <input type="text" id="email" class="form-control">
+                           </div>
+
+                           <div class="form-group" id="form-telefone">
+                               <label for="email">Telefone</label>
+                               <input type="text" id="telefone" class="form-control">
+                           </div>
+
+                           <button class="btn btn-primary btn-block btn-lg  ">Enviar</button>
+
+                       </form>
+                   </div>
+
+                   <div id="form-editar-contato" class="hidden">
+                       <form  action="#" class="well">
+                           <legend>EDITAR CONTATO</legend>
+
+                           <input type="hidden" id="editar-id">
+
+                           <div class="form-group" id="form-editar-nome">
+                               <label for="nome">Nome</label>
+                               <input type="text" id="editar-nome" class="form-control">
+                           </div>
+
+                           <div class="form-group" id="form-editar-email">
+                               <label for="email">Email</label>
+                               <input type="text" id="editar-email" class="form-control">
+                           </div>
+
+                           <div class="form-group" id="form-editar-telefone">
+                               <label for="email">Telefone</label>
+                               <input type="text" id="editar-telefone" class="form-control">
+                           </div>
+
+                           <button class="btn btn-primary btn-block btn-lg">Atualizar</button>
+
+                           <button type="button" class="btn btn-sm btn-default btn-block">
+                               <span class="glyphicon glyphicon-remove"></span>
+                               Cancelar
+                           </button>
+                       </form>
+                   </div>
+
+                    <div class="table-responsive">
+
+                      <br><br>
+                      <input id="filtro" class="form-control" placeholder="O que procuras?">
+
+                      <table class="table table-hover">
+                          <thead>
+                          <tr>
+                              <th>ID</th>
+                              <th>Nome</th>
+                              <th>Email</th>
+                              <th>Telefone</th>
+                              <th>Ações</th>
+                              <th><input type="checkbox" id="check-todos"></th>
+                          </tr>
+                          </thead>
+                          <tbody id="lista">
+
+                          </tbody>
+                      </table>
+                    </div>
+
+               </div>
+
+           </div>
+        </div>
+
     </div>
-    <div class="panel-body">
-        <marquee><h1>E aew ?</h1></marquee>
-    </div>
-</div>
-</div><!--col lg 4 -->
-</div> <!-- row -->
+
+</body>
+
+
+<script src="js/jquery.js"></script>
+<script src="jquery-ui/jquery-ui.js"></script>
+<script src="js/crud.js"></script>
+<script src="js/eventos.js"></script>
+<script src="js/validar.js"></script>
+
+</html>
